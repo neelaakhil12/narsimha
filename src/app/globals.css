@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f6;
+  --foreground: #1a120b;
+  --primary: #3d2b1f;
+  --primary-foreground: #faf9f6;
+  --secondary: #8b5e3c;
+  --secondary-foreground: #faf9f6;
+  --accent: #bf9a63;
+  --accent-foreground: #1a120b;
+  --muted: #d7ccc8;
+  --muted-foreground: #5d4037;
+  --border: #d7ccc8;
+  --input: #d7ccc8;
+  --ring: #3d2b1f;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: #1a120b;
+  --foreground: #faf9f6;
+  --primary: #8b5e3c;
+  --primary-foreground: #1a120b;
+  --secondary: #3d2b1f;
+  --secondary-foreground: #faf9f6;
+  --accent: #bf9a63;
+  --accent-foreground: #1a120b;
+  --muted: #3d2b1f;
+  --muted-foreground: #d7ccc8;
+  --border: #3d2b1f;
+  --input: #3d2b1f;
+  --ring: #bf9a63;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Prevent long text from breaking layout */
+.break-words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Prevent images and media from breaking layout */
+img, video, svg {
+  max-width: 100%;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
